@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="source\Sound\SoundManager.cpp" />
     <ClCompile Include="source\GameLoop\GameLoop.cpp" />
     <ClCompile Include="main.cpp" />
@@ -142,6 +144,8 @@
     <ClCompile Include="source\Time\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="header\GameLoop\GameLoop.h" />
     <ClInclude Include="header\Event\EventPollingManager.h" />
     <ClInclude Include="header\GameWindow\GameWindowManager.h" />
