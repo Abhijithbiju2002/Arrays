@@ -1,6 +1,10 @@
 #include"../../Board.h"
 #include <iostream>
 
+using namespace std;
+using namespace sf;
+
+
 namespace Gameplay {
 
 	Board::Board() {
@@ -10,11 +14,12 @@ namespace Gameplay {
 	void Board::initialize() {
 
 		initializeBoardImage();
+		createBoard();//Call Create Board method:
 	}
 	void Board::initializeBoardImage() {
 
 		if (!boardTexture.loadFromFile(boardTexturePath)) {
-			std::cerr << "Failed to load board texture!" << std::endl;
+			cerr << "Failed to load board texture!" << endl;
 			return;
 		}
 
@@ -24,8 +29,12 @@ namespace Gameplay {
 			boardHeight / boardTexture.getSize().y);
 
 	}
-	void Board::render(sf::RenderWindow& window) {
+	void Board::createBoard() {
+		cell = new Cell(83, 83, Vector2i(0, 0));
+	}
+	void Board::render(RenderWindow& window) {
 
 		window.draw(boardSprite);
+		cell->render(window);
 	}
 }

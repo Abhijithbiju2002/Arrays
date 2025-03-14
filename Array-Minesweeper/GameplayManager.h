@@ -2,15 +2,19 @@
 #include "../../Board.h"
 #include <SFML/Graphics.hpp>
 
+using namespace std;
+using namespace sf;
+
+
 namespace Gameplay
 {
     class GameplayManager
     {
     private:
         Board* board;
-        sf::Texture background_texture;// Declare background texture
-        sf::Sprite background_sprite;    // Declare sprite
-        std::string background_texture_path = "assets/textures/minesweeper_bg.png";
+        Texture background_texture;// Declare background texture
+        Sprite background_sprite;    // Declare sprite
+        string background_texture_path = "assets/textures/minesweeper_bg.png";
         int background_alpha = 255;
 
 
@@ -22,6 +26,6 @@ namespace Gameplay
         GameplayManager();
         ~GameplayManager() = default;
 
-        void render(sf::RenderWindow& window);
+        void render(RenderWindow& window);
     };
 }

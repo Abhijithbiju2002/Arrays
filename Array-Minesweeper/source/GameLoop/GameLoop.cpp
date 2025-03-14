@@ -21,11 +21,11 @@ void GameLoop::initialize()
     splash_screen_manager = new SplashScreenManager(game_window);
 
     // Initialize Sounds:
-    Sound::SoundManager::Initialize();
-    Sound::SoundManager::PlayBackgroundMusic();
+    ::Sound::SoundManager::Initialize();
+    ::Sound::SoundManager::PlayBackgroundMusic();
 
     // Initialize Time:
-    Time::TimeManager::initialize();
+    ::Time::TimeManager::initialize();
 }
 
 GameLoop::~GameLoop()
@@ -38,7 +38,7 @@ GameLoop::~GameLoop()
 
 void GameLoop::update()
 {
-    Time::TimeManager::update();
+    ::Time::TimeManager::update();
     event_manager->update();
     window_manager->update();
 

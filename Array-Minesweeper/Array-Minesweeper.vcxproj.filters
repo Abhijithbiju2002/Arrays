@@ -48,6 +48,12 @@
     <ClCompile Include="Board.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Event\EventPollingManager.h">
@@ -72,6 +78,12 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Board.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
