@@ -22,6 +22,10 @@ namespace UIElements {
 		buttonSprite.setPosition(position);
 		buttonSprite.setScale(width / button_texture.getSize().x, height / button_texture.getSize().y);
 	}
+	void Button::setTextureRect(const IntRect& rect) {
+		//Set a rectangle on the texture
+		buttonSprite.setTextureRect(rect);
+	}
 	void Button::render(RenderWindow& window)const {
 		window.draw(buttonSprite);
 	}
