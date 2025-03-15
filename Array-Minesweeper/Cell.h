@@ -35,11 +35,16 @@ namespace Gameplay {
 
 		const int tile_size = 128;
 		const int slice_count = 12;
+
+		const float cell_top_offset = 274.f;
+		const float cell_left_offset = 583.f;
+
 		const string cell_texture_path = "assets/textures/cells.jpeg";
 
 		Button* cell_button;
 
 		void initialize(float width, float height, Vector2i position);
+		Vector2f getCellScreenPosition()const;
 
 	public:
 		Cell(float width, float height, Vector2i position);
