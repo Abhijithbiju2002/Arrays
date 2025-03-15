@@ -26,6 +26,7 @@ namespace UIElements {
 		//Set a rectangle on the texture
 		buttonSprite.setTextureRect(rect);
 	}
+	
 	void Button::render(RenderWindow& window)const {
 		window.draw(buttonSprite);
 	}

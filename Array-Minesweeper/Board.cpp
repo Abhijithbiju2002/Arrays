@@ -30,7 +30,22 @@ namespace Gameplay {
 
 	}
 	void Board::createBoard() {
+
 		cell = new Cell(83, 83, Vector2i(0, 0));
+		float cell_width = getCellWidthInBoard();
+		float cell_height = getCellHeightInBoard();
+
+		cell = new Cell(cell_width, cell_height, Vector2i(0, 0));
+
+	}
+	float Board::getCellWidthInBoard()const {
+
+		return(boardWidth - horizontalCellPadding) / numberofColumns;
+
+	}
+	float Board::getCellHeightInBoard()const {
+
+		return(boardHeight - verticalCellPadding) / numberOfRows;
 	}
 	void Board::render(RenderWindow& window) {
 
