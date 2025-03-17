@@ -14,8 +14,8 @@ namespace Gameplay {
 
 		this->position = position;
 		Vector2f cellScreenPosition = getCellScreenPosition(width,height);
-		
 		cell_button = new Button(cell_texture_path, cellScreenPosition, width *slice_count, height);
+		current_cell_state = CellState::OPEN;
 	}
 
 	CellState Cell::getCellState()const {

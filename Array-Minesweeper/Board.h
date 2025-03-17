@@ -11,6 +11,10 @@ namespace Gameplay {
 
 	private:
 
+		//Randomization
+		default_random_engine randomEngine;
+		random_device randomDevice;
+
 		// Dimensions and Position
 		const float boardWidth = 866.f;
 		const float boardHeight = 1080.f;
@@ -25,6 +29,9 @@ namespace Gameplay {
 		const float horizontalCellPadding = 115.f;
 		const float verticalCellPadding = 329.f;
 
+		//Number of Mines
+		static const int minesCount = 9;
+
 		float getCellWidthInBoard()const;
 		float getCellHeightInBoard() const;
 
@@ -37,6 +44,11 @@ namespace Gameplay {
 		void initializeBoardImage();
 		void initialize();
 		void createBoard();
+		void populateBoard();
+		void populateMines();
+		//populating board
+		
+		void initializeVariables();
 
 	public:
 		//board constructor
