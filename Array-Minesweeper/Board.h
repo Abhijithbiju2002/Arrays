@@ -20,7 +20,7 @@ namespace Gameplay {
 		static const int numberOfRows = 9;
 		static const int numberOfColumns = 9;
 
-		Cell* cell [numberOfColumns];
+		Cell* cell[numberOfRows] [numberOfColumns];
 
 		const float horizontalCellPadding = 115.f;
 		const float verticalCellPadding = 329.f;
@@ -28,7 +28,7 @@ namespace Gameplay {
 		float getCellWidthInBoard()const;
 		float getCellHeightInBoard() const;
 
-		//Board's texture and sprite
+		//Board's texture and spritev
 		const std::string boardTexturePath = "assets/textures/board.png";
 		sf::Texture boardTexture;
 		sf::Sprite boardSprite;

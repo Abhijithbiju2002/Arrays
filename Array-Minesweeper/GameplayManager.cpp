@@ -16,7 +16,7 @@ namespace Gameplay
 
     void GameplayManager::initialize()
     {
-        //initialize background image
+        //initialize background imagev
         initializeBackgroundImage();
         initializeVariables();
       

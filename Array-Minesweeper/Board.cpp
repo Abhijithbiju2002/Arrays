@@ -36,9 +36,14 @@ namespace Gameplay {
 		float cell_height = getCellHeightInBoard();
 
 		//cell = new Cell(cell_width, cell_height, Vector2i(0, 0));
-		for (int col = 0;col < numberOfColumns; ++col) {
-			cell[col] = new Cell(cell_width, cell_height, Vector2i(col, 0));
+		for (int row = 0;row < numberOfRows; ++row) {
+
+			for (int col = 0;col < numberOfColumns; ++col) {
+				cell[row][col] = new Cell(cell_width, cell_height, Vector2i(row, col));
+			}
 		}
+		
+		
 
 	}
 	float Board::getCellWidthInBoard()const {
@@ -53,8 +58,10 @@ namespace Gameplay {
 	void Board::render(RenderWindow& window) {
 
 		window.draw(boardSprite);
-		for (int col = 0;col < numberOfColumns;++col) {
-			cell[col]->render(window);
+		for (int row = 0; row < numberOfRows; ++row) {
+			for (int col = 0;col < numberOfColumns;++col) {
+				cell[row][col]->render(window);
+			}
 		}
 	}
 }
