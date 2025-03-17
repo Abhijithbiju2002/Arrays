@@ -19,9 +19,6 @@ namespace UIElements{
 		Texture button_texture;
 		Sprite buttonSprite;
 
-		
-		
-
 		void initialize(const string& texture_path, const Vector2f& position, float width, float height);
 		
 

@@ -5,11 +5,12 @@
 #include "../../header/Event/EventPollingManager.h"
 
 
+
 namespace Gameplay {
 	class Board {
 
 	private:
-		Cell* cell;
+
 		// Dimensions and Position
 		const float boardWidth = 866.f;
 		const float boardHeight = 1080.f;
@@ -17,7 +18,9 @@ namespace Gameplay {
 
 		// Board Constants
 		static const int numberOfRows = 9;
-		static const int numberofColumns = 9;
+		static const int numberOfColumns = 9;
+
+		Cell* cell [numberOfColumns];
 
 		const float horizontalCellPadding = 115.f;
 		const float verticalCellPadding = 329.f;

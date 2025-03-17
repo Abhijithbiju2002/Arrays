@@ -44,7 +44,7 @@ namespace Gameplay {
 		Button* cell_button;
 
 		void initialize(float width, float height, Vector2i position);
-		Vector2f getCellScreenPosition()const;
+		Vector2f getCellScreenPosition(float width, float height)const;//update the signature
 
 	public:
 		Cell(float width, float height, Vector2i position);

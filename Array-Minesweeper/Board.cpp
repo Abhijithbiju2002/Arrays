@@ -31,16 +31,19 @@ namespace Gameplay {
 	}
 	void Board::createBoard() {
 
-		cell = new Cell(83, 83, Vector2i(0, 0));
+		//cell = new Cell(83, 83, Vector2i(0, 0));
 		float cell_width = getCellWidthInBoard();
 		float cell_height = getCellHeightInBoard();
 
-		cell = new Cell(cell_width, cell_height, Vector2i(0, 0));
+		//cell = new Cell(cell_width, cell_height, Vector2i(0, 0));
+		for (int col = 0;col < numberOfColumns; ++col) {
+			cell[col] = new Cell(cell_width, cell_height, Vector2i(col, 0));
+		}
 
 	}
 	float Board::getCellWidthInBoard()const {
 
-		return(boardWidth - horizontalCellPadding) / numberofColumns;
+		return(boardWidth - horizontalCellPadding) / numberOfColumns;
 
 	}
 	float Board::getCellHeightInBoard()const {
@@ -50,6 +53,8 @@ namespace Gameplay {
 	void Board::render(RenderWindow& window) {
 
 		window.draw(boardSprite);
-		cell->render(window);
+		for (int col = 0;col < numberOfColumns;++col) {
+			cell[col]->render(window);
+		}
 	}
 }

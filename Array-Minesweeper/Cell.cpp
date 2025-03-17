@@ -13,7 +13,7 @@ namespace Gameplay {
 	void Cell::initialize(float width, float height, Vector2i position) {
 
 		this->position = position;
-		Vector2f cellScreenPosition = getCellScreenPosition();
+		Vector2f cellScreenPosition = getCellScreenPosition(width,height);
 		
 		cell_button = new Button(cell_texture_path, cellScreenPosition, width *slice_count, height);
 	}
@@ -56,9 +56,9 @@ namespace Gameplay {
 		}
 
 	}
-	Vector2f Cell::getCellScreenPosition()const {
-		float xScreenPosition = cell_left_offset;
-		float yScreenPosition = cell_top_offset;
+	Vector2f Cell::getCellScreenPosition(float width,float height)const {
+		float xScreenPosition = cell_left_offset + position.x * width;
+		float yScreenPosition = cell_top_offset + position.y * height;
 		return Vector2f(xScreenPosition, yScreenPosition);
 	}
 	void Cell::render(RenderWindow& window) {
