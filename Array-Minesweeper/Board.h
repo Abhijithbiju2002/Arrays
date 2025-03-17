@@ -32,6 +32,10 @@ namespace Gameplay {
 		//Number of Mines
 		static const int minesCount = 9;
 
+		int countMinesAround(Vector2i cell_position);//Count the mines around
+		void populateCells();//Populate cells with values
+		bool isValidCellPosition(Vector2i cell_position);//Validate cell's postion
+
 		float getCellWidthInBoard()const;
 		float getCellHeightInBoard() const;
 
