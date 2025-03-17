@@ -4,6 +4,9 @@
 #include "../../../header/GameLoop/GameLoop.h"
 #include "../../../header/Time/TimeManager.h"
 
+using namespace std;
+using namespace sf;
+
 namespace UI
 {
     SplashScreenManager::SplashScreenManager(sf::RenderWindow* window)
@@ -36,13 +39,14 @@ namespace UI
 
     void SplashScreenManager::drawLogo()
     {
-        elapsed_time = elapsed_time + Time::TimeManager::getDeltaTime();
+        elapsed_time = elapsed_time + ::Time::TimeManager::getDeltaTime();
 
         if (elapsed_time < logo_animation_duration)
             game_window->draw(logo_sprite);
         else
         {
-            elapsed_time = 0.0f;
+            GameLoop::setGameState(GameState::GAMEPLAY); //Change the game state
+           
             /*GameLoop::setGameState(GameState::GAMEPLAY);*/
         }
     }

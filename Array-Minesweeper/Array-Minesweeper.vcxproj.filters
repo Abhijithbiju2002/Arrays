@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{d73910b1-94d9-4870-bbe1-c274e3a0b008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{acc57cd9-7124-457d-9377-92bb1ba12de0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +42,18 @@
     <ClCompile Include="source\Sound\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameplayManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Event\EventPollingManager.h">
@@ -47,14 +65,26 @@
     <ClInclude Include="header\GameLoop\GameLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\UI\SplashScreenManager\SplashScreenManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="header\Time\TimeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\Sound\SoundManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\UI\SplashScreen\SplashScreenManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayManager.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
