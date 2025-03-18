@@ -3,7 +3,11 @@
 #include <random>
 #include"../../Cell.h"
 #include "../../header/Event/EventPollingManager.h"
+#include "../../header/Sound/SoundManager.h"
 
+using namespace std;
+using namespace sf;
+using namespace Event;
 
 
 namespace Gameplay {
@@ -58,6 +62,8 @@ namespace Gameplay {
 		//board constructor
 		Board();
 
+		void onCellButtonClick(Vector2i cell_position, MouseButtonType mouse_button_type);
+		void update(EventPollingManager& eventManager, RenderWindow& window);
 		void render(sf::RenderWindow& window);
 
 	};

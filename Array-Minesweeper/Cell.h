@@ -6,6 +6,7 @@
 using namespace UIElements;
 using namespace std;
 using namespace sf;
+using namespace Event;
 
 namespace Gameplay {
 	enum class CellState {
@@ -25,6 +26,7 @@ namespace Gameplay {
 		EIGHT,
 		MINE,
 	};
+	class Board;
 	class Cell {
 	private:
 		// Cell data members
@@ -42,13 +44,19 @@ namespace Gameplay {
 		const string cell_texture_path = "assets/textures/cells.jpeg";
 
 		Button* cell_button;
+		Board* board;
 
-		void initialize(float width, float height, Vector2i position);
+		void initialize(float width, float height, Vector2i position,Board* board);
+		void registerCellButtonCallBack();
+		void cellButtonCallBack(MouseButtonType button_type);
 		Vector2f getCellScreenPosition(float width, float height)const;//update the signature
 
 	public:
-		Cell(float width, float height, Vector2i position);
+		Cell(float width, float height, Vector2i position,Board* board);
+		Vector2i getCellPosition();
 		~Cell() = default;
+
+		void update(EventPollingManager& eventManager, RenderWindow& window);
 
 		void render(RenderWindow& window);
 

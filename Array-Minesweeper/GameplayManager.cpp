@@ -33,6 +33,9 @@ namespace Gameplay
     {
         board = new Board();
     }
+    void GameplayManager::update(EventPollingManager& eventManager, RenderWindow& window) {
+        board->update(eventManager, window);
+    }
 
     void GameplayManager::render(RenderWindow& window)
     {

@@ -4,6 +4,8 @@
 
 using namespace std;
 using namespace sf;
+using namespace Event;
+
 
 
 namespace Gameplay
@@ -25,6 +27,8 @@ namespace Gameplay
     public:
         GameplayManager();
         ~GameplayManager() = default;
+
+        void update(EventPollingManager& eventManager, RenderWindow& window);
 
         void render(RenderWindow& window);
     };

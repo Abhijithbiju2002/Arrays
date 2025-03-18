@@ -28,13 +28,7 @@ void GameLoop::initialize()
     ::Time::TimeManager::initialize();
 }
 
-GameLoop::~GameLoop()
-{
-    delete window_manager;
-    delete event_manager;
-    delete splash_screen_manager;
-    delete gameplay_manager;
-}
+
 
 void GameLoop::update()
 {
@@ -50,6 +44,7 @@ void GameLoop::update()
     case GameState::MAIN_MENU:
         break;
     case GameState::GAMEPLAY:
+        gameplay_manager->update(*event_manager, *game_window);//update gameplay_managero
         break;
     case GameState::EXIT:
         game_window->close();
@@ -76,6 +71,13 @@ void GameLoop::render()
     }
 
     game_window->display();
+}
+GameLoop::~GameLoop()
+{
+    delete window_manager;
+    delete event_manager;
+    delete splash_screen_manager;
+    delete gameplay_manager;
 }
 
 void GameLoop::run()

@@ -46,7 +46,7 @@ namespace Gameplay {
 		for (int row = 0;row < numberOfRows; ++row) {
 
 			for (int col = 0;col < numberOfColumns; ++col) {
-				cell[row][col] = new Cell(cell_width, cell_height, Vector2i(row, col));
+				cell[row][col] = new Cell(cell_width, cell_height, Vector2i(row, col),this);
 			}
 		}
 
@@ -116,6 +116,21 @@ namespace Gameplay {
 	float Board::getCellHeightInBoard()const {
 
 		return(boardHeight - verticalCellPadding) / numberOfRows;
+	}
+	void Board::onCellButtonClick(Vector2i cell_position, MouseButtonType mouse_button_type) {
+		if (mouse_button_type == MouseButtonType::LEFT_MOUSE_BUTTON) {
+
+		}
+		else if (mouse_button_type == MouseButtonType::RIGHT_MOUSE_BUTTON) {
+
+		}
+	}
+	void Board::update(EventPollingManager& eventManager, RenderWindow& window) {
+
+		for (int row = 0;row < numberOfRows;++row)
+			for (int col = 0;col < numberOfColumns;++col)
+				cell[row][col]->update(eventManager, window);
+
 	}
 	void Board::render(RenderWindow& window) {
 
