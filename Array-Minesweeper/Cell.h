@@ -57,6 +57,8 @@ namespace Gameplay {
 		Vector2i getCellPosition();
 		~Cell() = default;
 
+		void toggleFlag();
+
 		bool canOpenCell()const;
 		void open();
 

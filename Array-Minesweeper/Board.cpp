@@ -125,7 +125,14 @@ namespace Gameplay {
 		}
 		else if (mouse_button_type == MouseButtonType::RIGHT_MOUSE_BUTTON) {
 
+			::Sound::SoundManager::PlaySound(::Sound::SoundType::FLAG);//play flag sound
+			toggleFlag(cell_position);
 		}
+	}
+	void Board::toggleFlag(Vector2i cell_position) {
+		cell[cell_position.x][cell_position.y]->toggleFlag();
+		flaggedCells += (cell[cell_position.x][cell_position.y]->getCellState() ==
+			CellState::FLAGGED) ? 1: - 1;
 	}
 	void Board::openCell(Vector2i cell_position) {
 		if (!cell[cell_position.x][cell_position.y]->canOpenCell()) {

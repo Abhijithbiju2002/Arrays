@@ -19,6 +19,8 @@ namespace Gameplay {
 		default_random_engine randomEngine;
 		random_device randomDevice;
 
+		int flaggedCells;
+
 		// Dimensions and Position
 		const float boardWidth = 866.f;
 		const float boardHeight = 1080.f;
@@ -49,6 +51,8 @@ namespace Gameplay {
 		sf::Sprite boardSprite;
 
 		void openCell(Vector2i cell_position);
+
+		void toggleFlag(Vector2i cell_position);
 
 		//Helper Functions to initialize the variables
 		void initializeBoardImage();
