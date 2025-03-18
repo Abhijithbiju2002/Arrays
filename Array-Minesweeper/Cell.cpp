@@ -71,10 +71,16 @@ namespace Gameplay {
 		}
 
 	}
+	bool Cell::canOpenCell()const {
+		return current_cell_state == CellState::HIDDEN;
+	}
 	Vector2f Cell::getCellScreenPosition(float width,float height)const {
 		float xScreenPosition = cell_left_offset + position.x * width;
 		float yScreenPosition = cell_top_offset + position.y * height;
 		return Vector2f(xScreenPosition, yScreenPosition);
+	}
+	void Cell::open() {
+		setCellState(CellState::OPEN);// Change state to OPEN
 	}
 	void Cell::update(EventPollingManager& eventManager, RenderWindow& window) {
 		

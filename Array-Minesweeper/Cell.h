@@ -53,8 +53,12 @@ namespace Gameplay {
 
 	public:
 		Cell(float width, float height, Vector2i position,Board* board);
+
 		Vector2i getCellPosition();
 		~Cell() = default;
+
+		bool canOpenCell()const;
+		void open();
 
 		void update(EventPollingManager& eventManager, RenderWindow& window);
 

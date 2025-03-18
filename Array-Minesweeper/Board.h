@@ -48,6 +48,8 @@ namespace Gameplay {
 		sf::Texture boardTexture;
 		sf::Sprite boardSprite;
 
+		void openCell(Vector2i cell_position);
+
 		//Helper Functions to initialize the variables
 		void initializeBoardImage();
 		void initialize();

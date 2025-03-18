@@ -120,10 +120,18 @@ namespace Gameplay {
 	void Board::onCellButtonClick(Vector2i cell_position, MouseButtonType mouse_button_type) {
 		if (mouse_button_type == MouseButtonType::LEFT_MOUSE_BUTTON) {
 
+			::Sound::SoundManager::PlaySound(::Sound::SoundType::BUTTON_CLICK);//play click sound
+			openCell(cell_position); // Open the cell when left-clicked
 		}
 		else if (mouse_button_type == MouseButtonType::RIGHT_MOUSE_BUTTON) {
 
 		}
+	}
+	void Board::openCell(Vector2i cell_position) {
+		if (!cell[cell_position.x][cell_position.y]->canOpenCell()) {
+			return;// Can't open this cell
+		}
+		cell[cell_position.x][cell_position.y]->open(); // Open it!
 	}
 	void Board::update(EventPollingManager& eventManager, RenderWindow& window) {
 
