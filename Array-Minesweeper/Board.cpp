@@ -134,11 +134,67 @@ namespace Gameplay {
 		flaggedCells += (cell[cell_position.x][cell_position.y]->getCellState() ==
 			CellState::FLAGGED) ? 1: - 1;
 	}
-	void Board::openCell(Vector2i cell_position) {
-		if (!cell[cell_position.x][cell_position.y]->canOpenCell()) {
-			return;// Can't open this cell
+	void Board::processCellType(Vector2i cell_position) {
+
+		switch(cell[cell_position.x][cell_position.y]->getCellType()){
+		case CellType::EMPTY:
+			processEmptyCell(cell_position);
+			break;
+		case CellType::MINE:
+
+			break;
+		default:
+			cell[cell_position.x][cell_position.y]->open();
+			break;
 		}
-		cell[cell_position.x][cell_position.y]->open(); // Open it!
+	}
+	void Board::openCell(Vector2i cell_position) {
+		if (!cell[cell_position.x][cell_position.y]->canOpenCell()) 
+			return;// Can't open this cell
+
+			//replace open() method
+			processCellType(cell_position);
+		
+		//cell[cell_position.x][cell_position.y]->open(); // Open it!
+	}
+	void Board::processEmptyCell(Vector2i cell_position) {
+		CellState cell_state = cell[cell_position.x][cell_position.y]->getCellState();
+
+		// Handle the clicked cell
+		switch (cell_state)
+		{
+
+		case::Gameplay::CellState::OPEN:
+			return; // Already open, stop here
+		default:
+			cell[cell_position.x][cell_position.y]->open();
+		}
+
+			// Check all 8 neighbors
+		for (int a = -1;a <= 1;++a) {
+			for (int b = -1;b <= 1;++b) {
+
+				//Store neighbor cells position
+				Vector2i next_cell_position = Vector2i(a + cell_position.x, b + cell_position.y);
+
+				// Skip current cell and invalid positions
+				if ((a == 0 && b == 0) || !isValidCellPosition(next_cell_position))
+				{
+					continue;// Skip current cell and invalid positions
+				}
+				//Flagged Cell Case
+				CellState next_cell_state = cell[next_cell_position.x][next_cell_position.y]->getCellState();
+
+				if (next_cell_state == CellState::FLAGGED) {
+					toggleFlag(next_cell_position);
+				}
+
+				//Open neighbor cell
+				openCell(next_cell_position);
+
+			}
+				
+		}	
 	}
 	void Board::update(EventPollingManager& eventManager, RenderWindow& window) {
 

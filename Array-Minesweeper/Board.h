@@ -54,6 +54,7 @@ namespace Gameplay {
 
 		void toggleFlag(Vector2i cell_position);
 
+
 		//Helper Functions to initialize the variables
 		void initializeBoardImage();
 		void initialize();
@@ -63,6 +64,11 @@ namespace Gameplay {
 		//populating board
 		
 		void initializeVariables();
+
+		// handle different cell types
+		void processCellType(Vector2i cell_position);
+		//Empty Cells
+		void processEmptyCell(Vector2i cell_position);
 
 	public:
 		//board constructor
