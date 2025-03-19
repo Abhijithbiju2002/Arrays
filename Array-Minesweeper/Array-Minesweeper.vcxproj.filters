@@ -54,6 +54,9 @@
     <ClCompile Include="Cell.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="GameplayUI.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Event\EventPollingManager.h">
@@ -80,10 +83,13 @@
     <ClInclude Include="Board.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
+    <ClInclude Include="Buttons.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Cell.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayUI.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

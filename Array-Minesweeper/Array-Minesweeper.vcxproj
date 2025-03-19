@@ -137,6 +137,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
+    <ClCompile Include="GameplayUI.cpp" />
     <ClCompile Include="source\Sound\SoundManager.cpp" />
     <ClCompile Include="source\GameLoop\GameLoop.cpp" />
     <ClCompile Include="main.cpp" />
@@ -147,9 +148,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
-    <ClInclude Include="Button.h" />
+    <ClInclude Include="Buttons.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="GameplayManager.h" />
+    <ClInclude Include="GameplayUI.h" />
     <ClInclude Include="header\GameLoop\GameLoop.h" />
     <ClInclude Include="header\Event\EventPollingManager.h" />
     <ClInclude Include="header\GameWindow\GameWindowManager.h" />

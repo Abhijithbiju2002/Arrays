@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include"../../Button.h"
+#include"../../Buttons.h"
 #include "../../header/Event/EventPollingManager.h"
 
 using namespace UIElements;
