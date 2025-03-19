@@ -88,6 +88,9 @@ namespace Gameplay {
 		//board constructor
 		Board(GameplayManager* gameplayManager);
 
+		bool areAllCellsOpen();
+		void flagAllMines();
+
 		BoardState getBoardState() const;
 		void setBoardState(BoardState state);
 

@@ -35,6 +35,9 @@ namespace Gameplay
 
         GameResult game_result;
 
+        void gameWon();
+        void gameLost();
+
         void updateRemainingTime();
         void processTimeOver();
 
@@ -48,6 +51,9 @@ namespace Gameplay
     public:
         GameplayManager();
         ~GameplayManager() = default;
+
+        void checkGameWin();
+        void processGameResult();
 
         void setGameResult(GameResult gameResult);
         void update(EventPollingManager& eventManager, RenderWindow& window);

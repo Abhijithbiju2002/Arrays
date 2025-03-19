@@ -44,8 +44,8 @@ namespace Gameplay
         
         if (!hasGameEnded())//Check if the game has ended
             handleGameplay(eventManager, window);
-
-       //
+        else if (board->getBoardState() != BoardState::COMPLETED)
+            processGameResult();
     }
     void GameplayManager::updateRemainingTime() {
         remaining_time -= TimeManager::getDeltaTime();  // Decrease time
@@ -58,12 +58,40 @@ namespace Gameplay
             game_result = GameResult::LOST; // Game over!
         }
     }
+    void GameplayManager::processGameResult() {
+        switch (game_result)
+        {
+        case GameResult::WON:
+            gameWon();  // Victory! 
+            break;
+        case GameResult::LOST:
+            gameLost(); // Game Over! 
+            break;
+        default:
+            break;
+        }
+    }
+    void GameplayManager::gameWon() {
+        ::Sound::SoundManager::PlaySound(::Sound::SoundType::GAME_WON);
+        board->flagAllMines(); // Show all mines
+        board->setBoardState(BoardState::COMPLETED);  // Stop the game
+    }
+    void GameplayManager::gameLost() {
+        ::Sound::SoundManager::PlaySound(::Sound::SoundType::EXPLOSION);// Boom!
+        board->setBoardState(BoardState::COMPLETED);// Game over
+        board->revealAllMines(); // Show where the mines wer
+    }
     void GameplayManager::handleGameplay(EventPollingManager& eventManager,RenderWindow& window)
     {
         updateRemainingTime();
         board->update(eventManager, window);
+        checkGameWin();  // See if player has won
     }
-
+    void GameplayManager::checkGameWin() {
+        if (board->areAllCellsOpen()) {
+            game_result = GameResult::WON; // Victory!
+        }
+    }
     void GameplayManager::render(RenderWindow& window)
     {
         window.draw(background_sprite);
