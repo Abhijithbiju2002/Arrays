@@ -12,11 +12,18 @@ using namespace Event;
 
 namespace Gameplay {
 
+	enum class BoardState
+	{
+		FIRST_CELL,
+		PLAYING,
+		COMPLETED,
+	};
 	class GameplayManager;
 
 	class Board {
 
 	private:
+		BoardState boardState;
 
 		//Randomization
 		default_random_engine randomEngine;
@@ -64,8 +71,8 @@ namespace Gameplay {
 		void initializeBoardImage();
 		void initialize(GameplayManager* gameplay_manager);
 		void createBoard();
-		void populateBoard();
-		void populateMines();
+		void populateBoard(Vector2i cell_position);
+		void populateMines(Vector2i first_cell_position);
 		//populating board
 		
 		void initializeVariables(GameplayManager* gameplay_manager);
@@ -75,9 +82,14 @@ namespace Gameplay {
 		//Empty Cells
 		void processEmptyCell(Vector2i cell_position);
 
+		bool isInvalidMinePosition(Vector2i first_cell_position, int x, int y);
+
 	public:
 		//board constructor
 		Board(GameplayManager* gameplayManager);
+
+		BoardState getBoardState() const;
+		void setBoardState(BoardState state);
 
 		void onCellButtonClick(Vector2i cell_position, MouseButtonType mouse_button_type);
 		void revealAllMines();
