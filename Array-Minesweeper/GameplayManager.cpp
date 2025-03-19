@@ -38,10 +38,29 @@ namespace Gameplay
     void GameplayManager::initializeVariables()
     {
         board = new Board(this);
+        remaining_time = max_level_duration; // Start with full time
     }
     void GameplayManager::update(EventPollingManager& eventManager, RenderWindow& window) {
         
-        if(!hasGameEnded())//Check if the game has ended
+        if (!hasGameEnded())//Check if the game has ended
+            handleGameplay(eventManager, window);
+
+       //
+    }
+    void GameplayManager::updateRemainingTime() {
+        remaining_time -= TimeManager::getDeltaTime();  // Decrease time
+        processTimeOver();  // Check if time's up
+    }
+    void GameplayManager::processTimeOver() {
+
+        if (remaining_time <= 0) {
+            remaining_time = 0;// Don't go negative
+            game_result = GameResult::LOST; // Game over!
+        }
+    }
+    void GameplayManager::handleGameplay(EventPollingManager& eventManager,RenderWindow& window)
+    {
+        updateRemainingTime();
         board->update(eventManager, window);
     }
 

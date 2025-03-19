@@ -1,5 +1,7 @@
 #pragma once
 #include "../../Board.h"
+#include "../../header/Event/EventPollingManager.h"
+#include "../../header/Time/TimeManager.h"
 #include <SFML/Graphics.hpp>
 
 using namespace std;
@@ -10,6 +12,9 @@ using namespace Event;
 
 namespace Gameplay
 {
+    using namespace Event;
+    using namespace Time;
+
     enum class GameResult {
         NONE,
         WON,
@@ -24,9 +29,17 @@ namespace Gameplay
         string background_texture_path = "assets/textures/minesweeper_bg.png";
         int background_alpha = 255;
 
+        const float max_level_duration = 150.0f;
+        const float game_over_time = 11.0f;
+        float remaining_time;
+
         GameResult game_result;
 
-        
+        void updateRemainingTime();
+        void processTimeOver();
+
+        void handleGameplay(EventPollingManager& eventManager,RenderWindow& window);
+
         void initialize();
         void initializeBackgroundImage();
         void initializeVariables();
