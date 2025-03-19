@@ -28,12 +28,20 @@ namespace Gameplay
         background_sprite.setTexture(background_texture);
         background_sprite.setColor(Color(255, 255, 255, background_alpha));
     }
+    void GameplayManager::setGameResult(GameResult gameResult) {
+        this->game_result = gameResult;
+    }
+    bool GameplayManager::hasGameEnded() {
+        return game_result != GameResult::NONE;
+    }
 
     void GameplayManager::initializeVariables()
     {
-        board = new Board();
+        board = new Board(this);
     }
     void GameplayManager::update(EventPollingManager& eventManager, RenderWindow& window) {
+        
+        if(!hasGameEnded())//Check if the game has ended
         board->update(eventManager, window);
     }
 
