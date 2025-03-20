@@ -3,8 +3,11 @@
 #include "../../header/Event/EventPollingManager.h"
 #include "../../header/Time/TimeManager.h"
 #include "../../header/UI/GameplayUI/GameplayUI.h"
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 
+namespace UI {
+    class GameplayUI;
+}
 
 namespace Gameplay
 {
@@ -52,7 +55,7 @@ namespace Gameplay
         void initializeVariables();
         bool hasGameEnded();
 
-        int getMinesCount() const;
+        //int getMinesCount() const;
 
     public:
         GameplayManager();

@@ -4,6 +4,7 @@
 
 using namespace std;
 using namespace sf;
+using namespace UI;
 
 
 namespace Gameplay
@@ -34,7 +35,7 @@ namespace Gameplay
     bool GameplayManager::hasGameEnded() {
         return game_result != GameResult::NONE;
     }
-    int GameplayManager::getMinesCount() const {
+    int GameplayManager::getRemainingMinesCount() const {
         return board->getRemainingMinesCount();
     }
 
