@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\GameLoop\Gameplay\Board.cpp" />
+    <ClCompile Include="source\UI\MainMenu\MainMenuManager.cpp" />
     <ClCompile Include="source\UI\UIElements\Button\Button.cpp" />
     <ClCompile Include="source\GameLoop\Gameplay\Cell.cpp" />
     <ClCompile Include="source\GameLoop\Gameplay\GameplayManager.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\GameLoop\Gameplay\Board.h" />
+    <ClInclude Include="header\UI\MainMenu\MainMenuManager.h" />
     <ClInclude Include="header\UI\UIElements\Button\Buttons.h" />
     <ClInclude Include="header\GameLoop\Gameplay\Cell.h" />
     <ClInclude Include="header\GameLoop\Gameplay\GameplayManager.h" />

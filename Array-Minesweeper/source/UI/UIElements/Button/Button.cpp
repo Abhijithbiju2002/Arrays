@@ -31,7 +31,7 @@ namespace UIElements {
 		buttonSprite.setPosition(position);
 		buttonSprite.setScale(width / button_texture.getSize().x, height / button_texture.getSize().y);
 	}
-	void Button::resgisterCallBackFunction(CallbackFunction button_callback) {
+	void Button::registerCallBackFunction(CallbackFunction button_callback) {
 		callback_function = button_callback;
 
 	}

@@ -47,7 +47,7 @@ namespace UI {
         timeText.setString("000");
     }
     void GameplayUI::registerButtonCallback() {
-        restartButton->resgisterCallBackFunction([this](UIElements::MouseButtonType buttonType) {
+        restartButton->registerCallBackFunction([this](UIElements::MouseButtonType buttonType) {
             RestartButtonCallback(buttonType);
             });
     }

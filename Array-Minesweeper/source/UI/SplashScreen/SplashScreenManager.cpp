@@ -45,7 +45,8 @@ namespace UI
             game_window->draw(logo_sprite);
         else
         {
-            GameLoop::setGameState(GameState::GAMEPLAY); //Change the game state
+            elapsed_time = 0.0f;
+            GameLoop::setGameState(GameState::MAIN_MENU); //Change the game state
            
             /*GameLoop::setGameState(GameState::GAMEPLAY);*/
         }

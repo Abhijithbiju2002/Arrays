@@ -24,7 +24,7 @@ namespace UI
         Text timeText;
 
         // Button element
-        Button * restartButton = nullptr;
+        ::Button * restartButton = nullptr;
         bool restartButtonClicked = false;
 
         // Constants

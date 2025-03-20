@@ -22,7 +22,7 @@ namespace Gameplay {
 		registerCellButtonCallBack();//register a method
 	}
 	void Cell::registerCellButtonCallBack() {
-		cell_button->resgisterCallBackFunction([this](MouseButtonType button_type) {
+		cell_button->registerCallBackFunction([this](MouseButtonType button_type) {
 			cellButtonCallBack(button_type);// Call Cell's own callback logic
 			});
 	}

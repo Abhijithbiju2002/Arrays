@@ -57,6 +57,9 @@
     <ClCompile Include="source\UI\GameplayUI\GameplayUI.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="source\UI\MainMenu\MainMenuManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Event\EventPollingManager.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="header\UI\GameplayUI\GameplayUI.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\UI\MainMenu\MainMenuManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

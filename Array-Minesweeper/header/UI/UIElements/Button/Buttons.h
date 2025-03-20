@@ -1,4 +1,4 @@
-#pragma 
+#pragma once
 #include <SFML/Graphics.hpp>
 #include "../../header/Event/EventPollingManager.h"
 #include "../../header/Sound/SoundManager.h"
@@ -32,7 +32,7 @@ namespace UIElements{
 	public:
 		Button(const string& texture_path, const Vector2f& position, float width, float height);
 
-		void resgisterCallBackFunction(CallbackFunction button_callback);
+		void registerCallBackFunction(CallbackFunction button_callback);
 		void handleButtonInteractions(EventPollingManager& event_manager, const RenderWindow& window);
 
 		void render(RenderWindow& window)const;
