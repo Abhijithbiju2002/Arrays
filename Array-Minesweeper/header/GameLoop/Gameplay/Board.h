@@ -96,6 +96,8 @@ namespace Gameplay {
 		BoardState getBoardState() const;
 		void setBoardState(BoardState state);
 
+		void reset();
+
 		void onCellButtonClick(Vector2i cell_position, MouseButtonType mouse_button_type);
 		void revealAllMines();
 		void update(EventPollingManager& eventManager, RenderWindow& window);

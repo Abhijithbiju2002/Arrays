@@ -2,6 +2,7 @@
 #include "../../header/GameLoop/Gameplay/GameplayManager.h"
 #include"../../header/Time/TimeManager.h"
 
+using namespace Time;
 using namespace std;
 using namespace sf;
 using namespace UI;
@@ -91,6 +92,12 @@ namespace Gameplay
         ::Sound::SoundManager::PlaySound(::Sound::SoundType::EXPLOSION);// Boom!
         board->setBoardState(BoardState::COMPLETED);// Game over
         board->revealAllMines(); // Show where the mines wer
+    }
+    void GameplayManager::restartGame() {
+        game_result = GameResult::NONE;  // Clear previous result
+        board->reset();  // Reset the board
+        ::Time::TimeManager::initialize();  // Reset timer
+        remaining_time = max_level_duration;  // Full time again
     }
     void GameplayManager::handleGameplay(EventPollingManager& eventManager,RenderWindow& window)
     {

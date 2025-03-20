@@ -59,6 +59,8 @@ namespace Gameplay {
 
 		void toggleFlag();
 
+		void reset();
+
 		bool canOpenCell()const;
 		void open();
 

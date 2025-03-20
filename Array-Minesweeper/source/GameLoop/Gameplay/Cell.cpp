@@ -91,6 +91,10 @@ namespace Gameplay {
 	void Cell::open() {
 		setCellState(CellState::OPEN);// Change state to OPEN
 	}
+	void Cell::reset() {
+		current_cell_state = CellState::HIDDEN;  // Back to hidden
+		cell_type = CellType::EMPTY;            // Back to empty
+	}
 	void Cell::update(EventPollingManager& eventManager, RenderWindow& window) {
 		
 	    if(cell_button) {

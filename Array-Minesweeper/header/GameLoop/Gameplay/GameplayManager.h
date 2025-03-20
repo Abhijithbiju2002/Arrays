@@ -21,7 +21,7 @@ namespace Gameplay
     using namespace sf;
     using namespace Event;
     using namespace Time;
-   // using namespace UI;
+    using namespace UI;
 
     class GameplayManager
     {
@@ -63,6 +63,7 @@ namespace Gameplay
 
         void checkGameWin();
         void processGameResult();
+        void restartGame();
 
         void setGameResult(GameResult gameResult);
         void update(EventPollingManager& eventManager, RenderWindow& window);
