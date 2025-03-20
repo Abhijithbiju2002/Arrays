@@ -3,9 +3,13 @@
 #include <iostream>
 #include "..\..\header\Sound\SoundManager.h"
 
+
+
 GameState GameLoop::current_state = GameState::SPLASH_SCREEN;
 
-GameLoop::GameLoop() { initialize(); }
+GameLoop::GameLoop() { 
+    initialize();
+}
 
 void GameLoop::initialize()
 {
@@ -15,25 +19,26 @@ void GameLoop::initialize()
     event_manager = new EventPollingManager(game_window);
 
     splash_screen_manager = new SplashScreenManager(game_window);
+    //initialize the main menu
+    main_menu_manager = new MainMenuManager(game_window);
+    gameplay_manager = new GameplayManager(); 	//initialize gameplay_manager
+   
+
+  
 
     // Initialize Sounds:
-    Sound::SoundManager::Initialize();
-    Sound::SoundManager::PlayBackgroundMusic();
+    ::Sound::SoundManager::Initialize();
+    ::Sound::SoundManager::PlayBackgroundMusic();
 
     // Initialize Time:
-    Time::TimeManager::initialize();
+    ::Time::TimeManager::initialize();
 }
 
-GameLoop::~GameLoop()
-{
-    delete window_manager;
-    delete event_manager;
-    delete splash_screen_manager;
-}
+
 
 void GameLoop::update()
 {
-    Time::TimeManager::update();
+    ::Time::TimeManager::update();
     event_manager->update();
     window_manager->update();
 
@@ -43,8 +48,10 @@ void GameLoop::update()
         splash_screen_manager->update();
         break;
     case GameState::MAIN_MENU:
+        main_menu_manager->update(*event_manager);
         break;
     case GameState::GAMEPLAY:
+        gameplay_manager->update(*event_manager, *game_window);//update gameplay_managero
         break;
     case GameState::EXIT:
         game_window->close();
@@ -64,12 +71,22 @@ void GameLoop::render()
         splash_screen_manager->render();
         break;
     case GameState::MAIN_MENU:
+        main_menu_manager->render();
         break;
     case GameState::GAMEPLAY:
+        gameplay_manager->render(*game_window);
         break;
     }
 
     game_window->display();
+}
+GameLoop::~GameLoop()
+{
+    delete window_manager;
+    delete event_manager;
+    delete splash_screen_manager;
+    delete main_menu_manager; //delete main menu manager	
+    delete gameplay_manager;
 }
 
 void GameLoop::run()
