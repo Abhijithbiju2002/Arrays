@@ -1,5 +1,5 @@
-#include"../../Board.h"
-#include"../../GameplayManager.h"
+#include "../../header/GameLoop/Gameplay/Board.h"
+#include"../../header/GameLoop/Gameplay/GameplayManager.h"
 #include <iostream>
 
 using namespace std;
@@ -140,6 +140,9 @@ namespace Gameplay {
 			}
 			return mines_around;
 		}
+	}
+	int Board::getRemainingMinesCount() const {
+		return minesCount - flaggedCells;  // Unflagged mines remaining
 	}
 	bool Board::isValidCellPosition(Vector2i cell_position) {
 

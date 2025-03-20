@@ -7,7 +7,9 @@
 
 GameState GameLoop::current_state = GameState::SPLASH_SCREEN;
 
-GameLoop::GameLoop() { initialize(); }
+GameLoop::GameLoop() { 
+    initialize();
+}
 
 void GameLoop::initialize()
 {

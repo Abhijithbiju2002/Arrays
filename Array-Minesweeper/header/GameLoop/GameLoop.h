@@ -2,7 +2,8 @@
 #include "../../header/GameWindow/GameWindowManager.h"
 #include "../../header/Event/EventPollingManager.h"
 #include "../../header/UI/SplashScreen/SplashScreenManager.h"
-#include"../../GameplayManager.h"
+#include"../../header/GameLoop/Gameplay/GameplayManager.h"
+#include "../../header/UI/GameplayUI/GameplayUI.h"
 
 using namespace GameWindow;
 using namespace Event;

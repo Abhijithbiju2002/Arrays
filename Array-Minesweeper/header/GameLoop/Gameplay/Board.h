@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <random>
-#include"../../Cell.h"
+#include"../../header/GameLoop/Gameplay/Cell.h"
 #include "../../header/Event/EventPollingManager.h"
 #include "../../header/Sound/SoundManager.h"
 
@@ -88,9 +88,11 @@ namespace Gameplay {
 		//board constructor
 		Board(GameplayManager* gameplayManager);
 
+		int getRemainingMinesCount() const;
+
 		bool areAllCellsOpen();
 		void flagAllMines();
-
+		
 		BoardState getBoardState() const;
 		void setBoardState(BoardState state);
 

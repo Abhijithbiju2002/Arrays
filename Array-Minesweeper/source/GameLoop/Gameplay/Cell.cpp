@@ -1,5 +1,5 @@
-#include"../../Cell.h"
-#include"../../Board.h"
+#include"../../header/GameLoop/Gameplay/Cell.h"
+#include"../../header/GameLoop/Gameplay/Board.h"
 #include <iostream>
 
 using namespace std;

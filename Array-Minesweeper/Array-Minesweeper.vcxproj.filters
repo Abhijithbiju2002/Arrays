@@ -42,19 +42,19 @@
     <ClCompile Include="source\Sound\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameplayManager.cpp">
+    <ClCompile Include="source\GameLoop\Gameplay\GameplayManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Board.cpp">
+    <ClCompile Include="source\GameLoop\Gameplay\Board.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
+    <ClCompile Include="source\UI\UIElements\Button\Button.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Cell.cpp">
+    <ClCompile Include="source\GameLoop\Gameplay\Cell.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameplayUI.cpp">
+    <ClCompile Include="source\UI\GameplayUI\GameplayUI.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,19 +77,19 @@
     <ClInclude Include="header\UI\SplashScreen\SplashScreenManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameplayManager.h">
+    <ClInclude Include="header\GameLoop\Gameplay\GameplayManager.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Board.h">
+    <ClInclude Include="header\GameLoop\Gameplay\Board.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Buttons.h">
+    <ClInclude Include="header\UI\UIElements\Button\Buttons.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Cell.h">
+    <ClInclude Include="header\GameLoop\Gameplay\Cell.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="GameplayUI.h">
+    <ClInclude Include="header\UI\GameplayUI\GameplayUI.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

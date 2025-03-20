@@ -1,9 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "../../Buttons.h"
-#include "../../GameplayManager.h"
+#include "../../header/GameLoop/Gameplay/Board.h"
+#include "../../header/GameLoop/Gameplay/GameplayManager.h"
 #include "../../header/Event/EventPollingManager.h"
 
+
+using namespace std;
+using namespace sf;
 using namespace Gameplay;
 using namespace UIElements;
 using namespace Event;
